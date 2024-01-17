@@ -4,7 +4,7 @@ using UnityEngine;
 public class FollowMouse : MonoBehaviour
 {
     public Canvas parentCanvas;
-    public float padding = 50f; // Ajusta este valor según el tamaño del padding que desees 
+    public float padding = 50f; // Ajusta este valor según el tamaño del padding que desees     
     public void Update()
     {
         Vector2 movePos;

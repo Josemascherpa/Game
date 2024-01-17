@@ -5,14 +5,17 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/Scenes/EntryPointScene.unity
-    guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
     path: Assets/Scenes/TitlesScene.unity
     guid: 83dd90fc7cf901f48b83101e6debe646
   - enabled: 1
-    path: Assets/Scenes/Game.unity
+    path: Assets/Scenes/Menu.unity
     guid: bd836c8b00d1b5d44bc88c63c23c597f
+  - enabled: 1
+    path: Assets/Scenes/SelectCharacter.unity
+    guid: 0e4577163a43a8249ad949df9364062e
+  - enabled: 1
+    path: Assets/Scenes/Game.unity
+    guid: 2350acd8c545efa4d9083b5b9fca9f7b
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: 9bec65e1c161da84b8b0104674b7e809, type: 2}

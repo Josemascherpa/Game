@@ -1,7 +1,8 @@
-using System.Collections;
+
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class ManagerButtonsMenu : MonoBehaviour
 {
@@ -38,11 +39,17 @@ public class ManagerButtonsMenu : MonoBehaviour
     {
         Application.Quit();
     }
-    public void ReturnPlayMenu(){
+    public void ReturnPlayMenu()
+    {
         panelMenu.SetActive(true);
         panelNormDaiWeek.SetActive(false);
         returnPlayMenu.SetActive(false);
         ClearButtonsSprites();
+    }
+
+    public void ChangeSceneNormal()
+    {
+        SceneManager.LoadScene("SelectCharacter");
     }
     private void ClearButtonsSprites()
     {

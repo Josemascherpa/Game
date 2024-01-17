@@ -14,6 +14,9 @@ public class PassTitles : MonoBehaviour, IPointerClickHandler
     public float timeBetweenTitles=2f;
 
     private bool passTitlesCorou = true;
+    private void Awake() {
+        Cursor.visible=false;
+    }
 
     private void Start()
     {
