@@ -30,6 +30,7 @@ public class SceneManagerBehaviour : MonoBehaviour
 
     public async UniTask ChangeScene(AssetReference targetScene, AssetReference loadingScene=null)
     {
+        
         ILoadSceneInfo loadingSceneInfo ;
         if (loadingScene == null)
         {

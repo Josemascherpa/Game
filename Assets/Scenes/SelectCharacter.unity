@@ -2410,6 +2410,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameplaySettingsPrefabs: {fileID: 5658754330486797486, guid: 5efb8a223ce81a24bacd6bb994009ad7, type: 3}
   textNameSelected: {fileID: 1029850795}
+  loadScene:
+    m_AssetGUID: f370031473d5d8d43bda18777b9f69fa
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
+  gameScene:
+    m_AssetGUID: 2350acd8c545efa4d9083b5b9fca9f7b
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
 --- !u!1 &1959106121
 GameObject:
   m_ObjectHideFlags: 0

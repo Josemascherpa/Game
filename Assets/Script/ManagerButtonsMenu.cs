@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.AddressableAssets;
 
 public class ManagerButtonsMenu : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class ManagerButtonsMenu : MonoBehaviour
     [SerializeField] private GameObject panelNormDaiWeek;
     [SerializeField] private List<Image> listButtons;
     [SerializeField] private GameObject returnPlayMenu;
+    [SerializeField] private AssetReference sceneSelectCharacter;
     public void Play()
     {
         panelNormDaiWeek.SetActive(true);
@@ -47,9 +49,9 @@ public class ManagerButtonsMenu : MonoBehaviour
         ClearButtonsSprites();
     }
 
-    public void ChangeSceneNormal()
+    public async void ChangeSceneNormal()
     {
-        SceneManager.LoadScene("SelectCharacter");
+        await SceneManagerBehaviour.Instance.ChangeScene(sceneSelectCharacter);
     }
     private void ClearButtonsSprites()
     {

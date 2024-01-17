@@ -2,13 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
 using UnityEngine.SceneManagement;
+using MyGameDevTools.SceneLoading;
 
 public class PanelCharacters : MonoBehaviour
 {
     [SerializeField] private GameObject gameplaySettingsPrefabs;
     GameplaySettings gameplaySettingsScript;
     [SerializeField] private TextMeshProUGUI textNameSelected;
+    [SerializeField]private AssetReference loadScene;
+    [SerializeField]private AssetReference gameScene;
     
     private void Start()
     {
@@ -48,9 +52,9 @@ public class PanelCharacters : MonoBehaviour
         textNameSelected.text= "Green";      
     }
 
-    public void ChangeSceneGame()
-    {
-        
-        SceneManager.LoadScene("Game");
+    public async void ChangeSceneGame()
+    {                        
+        LoadingFaderNacho.fadeTime = 0;
+        await SceneManagerBehaviour.Instance.ChangeScene(gameScene);               
     }
 }

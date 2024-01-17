@@ -17,8 +17,8 @@ MonoBehaviour:
     m_SerializedData: []
   m_GUID: 83fb236d318f42a4f954e8cd6e00d800
   m_SerializeEntries:
-  - m_GUID: 83dd90fc7cf901f48b83101e6debe646
-    m_Address: Assets/Scenes/LoadScene.unity
+  - m_GUID: f370031473d5d8d43bda18777b9f69fa
+    m_Address: Assets/Scenes/SceneLoad.unity
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0

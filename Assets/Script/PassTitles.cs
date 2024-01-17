@@ -10,7 +10,8 @@ public class PassTitles : MonoBehaviour, IPointerClickHandler
 {    
     [SerializeField] private GameObject text1;
     [SerializeField] private GameObject text2;
-    [SerializeField] private GameObject text3;    
+    [SerializeField] private GameObject text3;  
+    [SerializeField]private AssetReference menuGame;  
     public float timeBetweenTitles=2f;
 
     private bool passTitlesCorou = true;
@@ -41,7 +42,7 @@ public class PassTitles : MonoBehaviour, IPointerClickHandler
         else if (text3.activeSelf)
         {
             StopAllCoroutines();
-            SceneManager.LoadScene("Game");
+            MenuGame();
         }
     }        
 
@@ -61,10 +62,14 @@ public class PassTitles : MonoBehaviour, IPointerClickHandler
                 text3.SetActive(true);
             }
             else if (text3.activeSelf)
-            {
-                SceneManager.LoadScene("Game");
+            {                
+                MenuGame();
             }
         }
+    }
+
+    private async void MenuGame(){
+        await SceneManagerBehaviour.Instance.ChangeScene(menuGame);
     }
 
 }
