@@ -1,10 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
+
 using TMPro;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
-using UnityEngine.SceneManagement;
-using MyGameDevTools.SceneLoading;
+
 
 public class PanelCharacters : MonoBehaviour
 {
@@ -34,22 +32,26 @@ public class PanelCharacters : MonoBehaviour
     {
         gameplaySettingsScript.SetCharacterSelected(1);
         textNameSelected.text= "Yellow";
+        textNameSelected.color = Color.yellow;
     }
 
     public void Rojo()
     {
         gameplaySettingsScript.SetCharacterSelected(2);
         textNameSelected.text= "Red";
+        textNameSelected.color = Color.red;
     }
     public void Blanco()
     {
         gameplaySettingsScript.SetCharacterSelected(3);
         textNameSelected.text= "White";
+        textNameSelected.color = Color.white;
     }
     public void Verde()
     {
         gameplaySettingsScript.SetCharacterSelected(4);  
-        textNameSelected.text= "Green";      
+        textNameSelected.text= "Green";     
+        textNameSelected.color = Color.green; 
     }
 
     public async void ChangeSceneGame()

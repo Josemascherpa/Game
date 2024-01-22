@@ -8,10 +8,6 @@ public class PauseGame : MonoBehaviour
     [SerializeField] private GameObject panelPause;
     [SerializeField] private AssetReference menuScene;
     bool pause = false;
-    void Start()
-    {
-
-    }
 
     // Update is called once per frame
     void Update()
@@ -32,6 +28,13 @@ public class PauseGame : MonoBehaviour
     }
 
     public async void ReturnMenu(){
+        Time.timeScale=1;
         await SceneManagerBehaviour.Instance.ChangeScene(menuScene); 
+    }
+
+    public void Continue(){
+        pause=false;
+        Time.timeScale=1;
+        panelPause.SetActive(false);
     }
 }

@@ -27,7 +27,6 @@ public class LoadingFaderNacho : MonoBehaviour
 
     void Start()
     {
-        
         _loadingProgress = loadingBehavior.Progress;
         _loadingProgress.StateChanged += OnLoadingStateChanged;
         FadeIn();
