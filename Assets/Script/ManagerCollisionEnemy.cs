@@ -1,8 +1,6 @@
-
-using System;
 using UnityEngine;
 
-public class Enemy : MonoBehaviour
+public class ManagerCollisionEnemy : MonoBehaviour
 {
     //Particles
     [SerializeField] private GameObject particles;
@@ -11,10 +9,8 @@ public class Enemy : MonoBehaviour
     Collider2D myCollider;
     Collider2D[] colliders;
     ContactFilter2D contactFilter = new ContactFilter2D();
-
     //Lifes
     public int life = 0;
-
     //Events
     public delegate void ShakeCamera();
     public static event ShakeCamera shakeEvent;

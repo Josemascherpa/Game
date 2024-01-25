@@ -1,12 +1,11 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class EffectsGame : MonoBehaviour
 {
     void Start()
     {
-        Enemy.shakeEvent+=ShakeCamera;
+        ManagerCollisionEnemy.shakeEvent+=ShakeCamera;
     }
     private void ShakeCamera(){
         StartCoroutine(Shake(0.07f,0.5f));
