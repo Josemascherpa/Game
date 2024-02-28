@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2929232577651923207}
   - component: {fileID: 2175433843762789402}
   m_Layer: 0
-  m_Name: BulletEnemy
+  m_Name: BulletEnemyExplo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.81960785, g: 0.28235295, b: 0.11372549, a: 1}
+  m_Color: {r: 0.81960785, g: 0.105882354, b: 0.11372549, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -98,7 +98,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1397c0a499fe09844b2aaaccf4e7fb40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 7
+  speed: 3.29
 --- !u!61 &2175433843762789402
 BoxCollider2D:
   m_ObjectHideFlags: 0

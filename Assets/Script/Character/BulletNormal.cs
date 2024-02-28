@@ -1,20 +1,58 @@
 using UnityEngine;
 public class BulletNormal : MonoBehaviour
 {
-    [SerializeField] private GameObject enemy;
     public float speed = 3;
 
-    // Update is called once per frame
+    //Collide
+    Collider2D myCollider;
+    Collider2D[] colliders;
+    ContactFilter2D contactFilter = new ContactFilter2D();
+    private OPParticlesBullet particlesBulletScript;
+
     private void Start()
     {
-        enemy = GameObject.FindGameObjectWithTag("Finish");   
+        particlesBulletScript = GameObject.FindGameObjectWithTag("OPParticlesBullet").GetComponent<OPParticlesBullet>();
+        myCollider = GetComponent<Collider2D>();
+        colliders = new Collider2D[1];
     }
+
     void Update()
     {
-        transform.position += transform.up * speed * Time.deltaTime;        
+        CollisionBullet();
+        transform.position += transform.up * speed * Time.deltaTime;
     }
     private void OnBecameInvisible()
     {
         gameObject.SetActive(false);
     }
+
+    private void CollisionBullet()
+    {
+        if (myCollider.OverlapCollider(contactFilter, colliders) > 0)
+        {
+            foreach (Collider2D collider in colliders)
+            {
+                if (collider.name.Contains("BulletEnemyExp"))
+                {
+                    if (particlesBulletScript != null)
+                    {
+                        particlesBulletScript.RequestBullet(collider.gameObject.transform.position).GetComponent<ParticleSystem>().Play();                
+                        ParticleSystem.MainModule particles = particlesBulletScript.RequestBullet(collider.gameObject.transform.position).GetComponent<ParticleSystem>().main;
+                        
+                        
+                    }
+                    else
+                    {
+                        Debug.Log("no encontro el gameobject de particulas");
+                    }
+                    collider.gameObject.transform.position = new Vector2(1000, 1000);
+                    collider.gameObject.SetActive(false);
+                    
+                }
+            }
+        }
+    }
 }
+
+
+

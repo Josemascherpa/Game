@@ -4,7 +4,6 @@ public class ManagerCollisionEnemy : MonoBehaviour
 {
     //Particles
     [SerializeField] private GameObject particles;
-
     //Collide
     Collider2D myCollider;
     Collider2D[] colliders;
@@ -14,6 +13,7 @@ public class ManagerCollisionEnemy : MonoBehaviour
     //Events
     public delegate void ShakeCamera();
     public static event ShakeCamera shakeEvent;
+    [SerializeField]private GameObject panelWin;
     
     void Start()
     {
@@ -27,7 +27,7 @@ public class ManagerCollisionEnemy : MonoBehaviour
         {
             foreach (Collider2D collider in colliders)
             {
-                if (collider.name.Contains("Bullet"))
+                if (collider.name.Contains("BulletC"))
                 {
                     life--;                    
                     if (life <= 0)
@@ -35,19 +35,23 @@ public class ManagerCollisionEnemy : MonoBehaviour
                         particles.transform.parent = null;
                         particles.GetComponent<ParticleSystem>().Play();                        
                         Destroy(this.gameObject);
+                        Time.timeScale=0;
+                        panelWin.SetActive(true);
                     }
                     collider.gameObject.transform.position = new Vector2(1000,1000);
                     collider.gameObject.SetActive(false);
+
                 }
                 else if (collider.name.Contains("Character"))
                 {
                     particles.transform.parent = null;
                     particles.GetComponent<ParticleSystem>().Play();
                     shakeEvent.Invoke();
-                    Destroy(this.gameObject);
+                    Time.timeScale=0;
+                    panelWin.SetActive(true); 
+                    Destroy(gameObject);
                 }
-            }
-            
+            }            
         }
     }
 }

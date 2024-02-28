@@ -14,7 +14,7 @@ public class EffectPointerButton : MonoBehaviour,IPointerEnterHandler,IPointerEx
         parent = transform.parent.gameObject;//obtengo el padre para desactivarle el layout horizontal y poder hacer la tween
     }
     public void OnPointerEnter(PointerEventData eventData){
-        //tweeen que suba
+        
         parent.GetComponent<HorizontalLayoutGroup>().enabled=false;
         transform.DOMoveY(transform.position.y+10,0);
 
@@ -22,7 +22,7 @@ public class EffectPointerButton : MonoBehaviour,IPointerEnterHandler,IPointerEx
     public void OnPointerExit(PointerEventData eventData)
     {
         parent.GetComponent<HorizontalLayoutGroup>().enabled=true;
-        //Tween que bajes
+        
     }
 
 }

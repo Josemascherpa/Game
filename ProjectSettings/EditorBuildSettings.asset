@@ -15,7 +15,7 @@ EditorBuildSettings:
     path: Assets/Scenes/SelectCharacter.unity
     guid: 0e4577163a43a8249ad949df9364062e
   - enabled: 0
-    path: Assets/Scenes/Game.unity
+    path: Assets/Scenes/Lvl1.unity
     guid: 2350acd8c545efa4d9083b5b9fca9f7b
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: 9bec65e1c161da84b8b0104674b7e809, type: 2}

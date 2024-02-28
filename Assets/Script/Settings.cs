@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.Mathematics;
 using UnityEngine;
 
 public class Settings : ScriptableObject
@@ -12,7 +9,6 @@ public class Settings : ScriptableObject
     public bool sound3D = false;
 
     //Video
-
     public bool fullScreen = false;
     public int crosshair = 1;
     public int sideart = 0;

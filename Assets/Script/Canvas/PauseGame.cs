@@ -7,6 +7,7 @@ public class PauseGame : MonoBehaviour
 {
     [SerializeField] private GameObject panelPause;
     [SerializeField] private AssetReference menuScene;
+    [SerializeField] private AssetReference sceneLvl;
     bool pause = false;
 
     // Update is called once per frame
@@ -36,5 +37,11 @@ public class PauseGame : MonoBehaviour
         pause=false;
         Time.timeScale=1;
         panelPause.SetActive(false);
+    }
+
+    public async void Retry()
+    {
+        Time.timeScale=1;
+        await SceneManagerBehaviour.Instance.ChangeScene(sceneLvl);
     }
 }

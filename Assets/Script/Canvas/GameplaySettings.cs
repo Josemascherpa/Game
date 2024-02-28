@@ -14,5 +14,6 @@ public class GameplaySettings : MonoBehaviour
 
     public int GetCharacterSelected(){
         return characterSelected;
+        
     }
 }
